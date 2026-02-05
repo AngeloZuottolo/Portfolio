@@ -1,7 +1,21 @@
 (function () {
   const root = document.documentElement;
   const toggle = document.getElementById('theme-toggle');
-  const storageKey = 'portfolio-theme';
+  const cookieKey = 'portfolio-theme';
+
+  const readThemeCookie = () => {
+    const pattern = new RegExp('(?:^|; )' + cookieKey.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '=([^;]*)');
+    const match = document.cookie.match(pattern);
+    if (!match) {
+      return 'light';
+    }
+    const value = decodeURIComponent(match[1]);
+    return value === 'dark' || value === 'light' ? value : 'light';
+  };
+
+  const writeThemeCookie = (theme) => {
+    document.cookie = cookieKey + '=' + encodeURIComponent(theme) + '; Path=/';
+  };
 
   const applyTheme = (theme) => {
     root.setAttribute('data-theme', theme);
@@ -12,8 +26,7 @@
     }
   };
 
-  const savedTheme = localStorage.getItem(storageKey);
-  const initialTheme = savedTheme === 'dark' || savedTheme === 'light' ? savedTheme : 'light';
+  const initialTheme = readThemeCookie();
   applyTheme(initialTheme);
 
   if (!toggle) {
@@ -24,6 +37,6 @@
     const currentTheme = root.getAttribute('data-theme');
     const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
     applyTheme(nextTheme);
-    localStorage.setItem(storageKey, nextTheme);
+    writeThemeCookie(nextTheme);
   });
 })();

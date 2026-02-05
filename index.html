@@ -8,6 +8,21 @@
       name="description"
       content="Homepage di benvenuto del mio portfolio personale: chi sono, cosa faccio e come contattarmi."
     />
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var cookieKey = 'portfolio-theme';
+        var pattern = new RegExp('(?:^|; )' + cookieKey.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '=([^;]*)');
+        var match = document.cookie.match(pattern);
+        if (!match) {
+          return;
+        }
+        var value = decodeURIComponent(match[1]);
+        if (value === 'dark' || value === 'light') {
+          root.setAttribute('data-theme', value);
+        }
+      })();
+    </script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
