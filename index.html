@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Benvenuto | Portfolio personale</title>
+    <meta
+      name="description"
+      content="Homepage di benvenuto del mio portfolio personale: chi sono, cosa faccio e come contattarmi."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav container" aria-label="Navigazione principale">
+        <a class="brand" href="index.html">Il Mio Portfolio</a>
+
+        <div class="nav-actions">
+          <a class="nav-link" href="curriculum.html">Curriculum</a>
+          <a class="nav-link" href="studi.html">Corso di studi</a>
+          <a class="nav-link" href="#contatti">Contattami</a>
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Attiva tema scuro">
+            🌙 Tema scuro
+          </button>
+        </div>
+      </nav>
+
+      <div class="hero-content container" id="top">
+        <p class="eyebrow">Ciao, benvenuto 👋</p>
+        <h1>Mi presento: costruisco progetti web con curiosità e attenzione ai dettagli.</h1>
+        <p class="intro">
+          Questa è la mia homepage di benvenuto: il punto di partenza del mio portfolio personale,
+          dove racconterò chi sono, le competenze che sto sviluppando e i lavori su cui mi piace
+          sperimentare.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#chi-sono">Scopri di più</a>
+          <a class="btn btn-secondary" href="#prossimi-passi">Cosa troverai qui</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section container" id="chi-sono">
+        <h2>Chi sono</h2>
+        <p>
+          Sono una persona appassionata di tecnologia e creatività. In questo spazio voglio
+          condividere la mia crescita professionale, raccontando progetti, idee e strumenti che uso
+          ogni giorno per migliorare.
+        </p>
+      </section>
+
+      <section class="section section-highlight" id="prossimi-passi">
+        <div class="container">
+          <h2>Cosa troverai in questo portfolio</h2>
+          <ul class="feature-list">
+            <li>Una panoramica sui miei progetti e test pratici.</li>
+            <li>Le competenze che sto acquisendo, con esempi concreti.</li>
+            <li>Un modo semplice per contattarmi e collaborare.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="contatti">
+      <div class="container footer-content">
+        <p>Grazie per la visita — questo portfolio è in continua evoluzione.</p>
+        <a href="mailto:ciao@example.com">ciao@example.com</a>
+      </div>
+    </footer>
+
+    <script src="theme.js"></script>
+  </body>
+</html>
